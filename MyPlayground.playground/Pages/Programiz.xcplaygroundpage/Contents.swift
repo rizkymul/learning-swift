@@ -296,18 +296,18 @@ let setB : Set = [1,6,3]
 print(setA)
 print(setB)
 // Union of Two Sets
-print(setA.union(setB))
+print(setA.union(setB)) // Gabungan
 // Intersection between Two Sets
-print(setA.intersection(setB))
+print(setA.intersection(setB)) // Titik Tengah
 // Difference between Two Sets
-print(setA.subtracting(setB))
-print(setB.subtracting(setA))
+print(setA.subtracting(setB)) // Punya A saja
+print(setB.subtracting(setA)) // Punya B saja
 // Symmetric Difference between Two Sets
-print(setA.symmetricDifference(setB))
+print(setA.symmetricDifference(setB)) // Tidak ada Titik Tengah
 
 let setC : Set = [1,5]
 // Check Subset of a Set
-print(setC.isSubset(of: setA.union(setB)))
+print(setC.isSubset(of: setA.union(setB))) // Lingkaran dalam lingkaran
 // Check if Two Sets are Equal
 if(setA == setB){
     print("same")
@@ -317,3 +317,61 @@ if(setA == setB){
 // Create an Empty Set
 var emptySet = Set<Int>()
 print(emptySet)
+
+
+// Swift Dictionary
+var dictCity = ["Nepal": "Kathmandu", "Italy": "Rome", "England": "London"]
+print(dictCity)
+var dictNum = [1: "One", 2: "Two", 3: "Three"]
+print(dictNum)
+// Add Elements to a Dictionary
+dictCity["Japan"] = "Tokyo"
+print(dictCity)
+print(dictCity["Japan"])
+// Change Value of Dictionary
+dictNum[3] = "Tree"
+print(dictNum)
+// Access Keys Only
+print(Array(dictCity.keys))
+// Access Values Only
+print(Array(dictCity.values))
+// Remove an Element from a Dictionary
+dictCity.removeValue(forKey: "England")
+print(dictCity)
+// Iterate Over a Dictionary
+for (index, item) in dictCity{
+    print("\(index): \(item)")
+}
+// Find Number of Dictionary Elements
+print(dictCity.count)
+// Create an Empty Dictionary
+var emptyDictionary = [Int:String]()
+print(emptyDictionary)
+
+// Swift Tuple
+var prooo = ("MacBook", 1099.99)
+print(prooo.0)
+print(prooo.1)
+// Modify Tuple Element
+prooo.1 = 1299.99
+print(prooo.1)
+// Named Tuple
+var cumpany = (product: "Programiz", version: 1.1)
+print(cumpany.product)
+print(cumpany.version)
+
+// Swift Nested Tuple
+var alfa = ("A", "B", "C", ("a", "b", "c"))
+print(alfa.0)
+print(alfa.3)
+print(alfa.3.1)
+// Add/Remove Elements from Tuple
+//alfa.4 = "O"
+//alfa.remove("C")
+print(alfa)
+// Dictionary Inside a Tuple
+var laptopLauch = ("Macbook", 1299, ["Nepal": "10 PM", "England": "10 AM"])
+print(laptopLauch.2)
+laptopLauch.2["USA"] = "11 AM"
+print(laptopLauch.2)
+print(laptopLauch)
