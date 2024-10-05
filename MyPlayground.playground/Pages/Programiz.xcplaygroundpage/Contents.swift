@@ -140,4 +140,180 @@ switch dataDiri {
     default: print("macam macam profesi")
 }
 
-//
+// For Loop Over Array
+let bahasaa = ["Swift", "Java", "Go", "Javascript"]
+
+for bahasa in bahasaa {
+    print(bahasa)
+}
+
+// For Loop with where Clause (diilangin)
+for bahasa in bahasaa where bahasa != "Java" {
+    print(bahasa)
+}
+
+// For Loop with Range
+let ungku = 1...3
+
+for i in ungku {
+    print(i)
+}
+
+// For Loop with Stride Function
+for i in stride(from: 1, to: 10, by: 3){
+    print(i)
+}
+
+// While Loop
+var uw = 1
+var ow = 5
+
+//while (uw <= ow) {
+//    print(uw)
+//    uw = uw + 1
+//}
+
+// While Loop to Display Game Level
+var currentLevel:Int = 0
+var finalLevel:Int = 5
+var gameCompleted = true
+
+while (currentLevel <= finalLevel) {
+    if gameCompleted {
+        print("You have passed level \(currentLevel)")
+        currentLevel += 1
+    }
+}
+print("Level Ends")
+
+// While Loop Repeat
+repeat{
+    print(uw)
+    uw = uw + 1
+} while (uw <= ow)
+
+// Nested for Loop
+for week in 1...2{
+    print("Week: \(week)")
+    
+    for day in 1...7{
+        print("  Day: \(day)")
+    }
+    print("...")
+    
+}
+
+// For Loop inside a While Loop
+
+var ming = 2
+var iterasi = 1
+
+while (iterasi <= ming){
+    print("Week: \(iterasi)")
+    
+    for day in 1...7{
+        print("   Hari: ke \(day)")
+    }
+    
+    iterasi += 1
+}
+
+// Break inside Nested Loop
+for week in 1...3{
+    print("Minggu ke \(week)")
+    
+    for day in 1...7{
+        if(week == 2){
+            break
+        }
+        
+        print("  Hari ke \(day)")
+    }
+    print("")
+}
+
+// Conrinue inside Nested Loop
+for week in 1...3{
+    print("Minggu ke \(week)")
+    
+    for day in 1...7{
+        if(day % 2 != 0){
+            continue
+        }
+        
+        print("  Hari ke \(day)")
+    }
+    print("")
+}
+
+// Swift Array
+var ar:[Int] = [2,4,6,8]
+print(ar)
+// Access Array Elements
+print(ar[0])
+// Add Element in Array
+// Using.append
+ar.append(10)
+print(ar)
+// Join Array
+var arAdd:[Int] = [12,14]
+ar.append(contentsOf: arAdd)
+print(ar)
+// Using.insert
+ar.insert(7, at: 3)
+print(ar)
+// Modify Elements Array
+ar[1] = 5
+print(ar)
+// Remove Elements Array
+ar.remove(at: 2)
+print(ar)
+// Looping Through Array
+for angka in ar {
+    print(angka)
+}
+// Find Number Array Elements
+print(ar.count)
+// Check Array is Empty
+print(ar.isEmpty ? "iyaa" : "tidak")
+// Array With Mixed Data Types
+var campur: [Any] = ["UwU", 33]
+print(campur)
+
+
+// Swift Set
+var studentID: Set<Int> = [112,114,116,118,120]
+print(studentID)
+// Add Elements to Set
+studentID.insert(122)
+print(studentID)
+// Remove Elements to Set
+studentID.remove(112)
+print(studentID)
+
+let setA : Set = [1,3,5]
+let setB : Set = [1,6,3]
+print(setA)
+print(setB)
+// Union of Two Sets
+print(setA.union(setB))
+// Intersection between Two Sets
+print(setA.intersection(setB))
+// Difference between Two Sets
+print(setA.subtracting(setB))
+print(setB.subtracting(setA))
+// Symmetric Difference between Two Sets
+print(setA.symmetricDifference(setB))
+
+let setC : Set = [1,5]
+// Check Subset of a Set
+print(setC.isSubset(of: setA.union(setB)))
+// Check if Two Sets are Equal
+if(setA == setB){
+    print("same")
+} else {
+    print("not same")
+}
+// Create an Empty Set
+var emptySet = Set<Int>()
+print(emptySet)
