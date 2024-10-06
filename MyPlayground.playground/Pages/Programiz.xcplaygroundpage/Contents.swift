@@ -375,3 +375,177 @@ print(laptopLauch.2)
 laptopLauch.2["USA"] = "11 AM"
 print(laptopLauch.2)
 print(laptopLauch)
+
+// Swift Functions
+func greet() -> String {
+    return "Hello World"
+}
+print(greet())
+// Function Parameters
+func addNum(num1: Int, num2: Int) -> Int{
+    return num1 + num2
+}
+print(addNum(num1: 2, num2: 3))
+// Function Parameter with Default Values
+func addAng(a: Int = 7, b: Int = 8){
+    var sum = a + b
+    print(sum)
+}
+
+addAng(a:2,b:3)
+addAng(b:2)
+addAng()
+
+// Function with Argument Label
+func tam(of a: Int, and b: Int){
+    var sum = a + b
+    print(sum)
+}
+tam(of: 4, and: 7)
+
+// Function Omit Argument Label
+func bah(_ a: Int, u b: Int){
+    var sum = a + b
+    print(sum)
+}
+bah(2,u:3)
+
+// Function with variadic parameters
+func hun( angka: Int ...){
+    var result = 0
+    for num in angka {
+        result = result + num
+    }
+    
+    print("Sum = \(result)")
+}
+
+hun(angka: 1,2,3,14)
+hun(angka: 5,10)
+
+// Function With inout Parameters
+func kataKasar(name: inout String){
+    if name == "Kontol"{
+        name = "Tidak boleh"
+    }
+}
+var kasar = "Kontol"
+print(kasar)
+kataKasar(name: &kasar)
+print(kasar)
+
+// Swift Nested Function
+func greetMessage() {
+    func displayName(){
+        print("Lah kok bener")
+    }
+    displayName()
+}
+greetMessage()
+// Nested Function with Parameters
+func tambahin(){
+    print("Penambahan")
+    
+    func display(num1: Int, num2: Int){
+        print(num1+num2)
+    }
+    
+    display(num1: 5, num2: 10)
+}
+tambahin()
+// Nested Function with Return Values
+func operate(symbol: String) -> (Int, Int) -> Int {
+    
+    func add(num1: Int, num2: Int) -> Int {
+        return num1+num2
+    }
+    
+    func substract(num1: Int, num2: Int) -> Int {
+        return num1 - num2
+    }
+    
+    var operation = (symbol == "+") ? add : substract
+    return operation
+}
+print(operate(symbol: "+")(10,5))
+
+var operasi = operate(symbol: "")
+var hasil = operasi(4,1)
+print(hasil)
+
+
+// Swift Function Recursion
+func countDown(number: Int){
+    print(number)
+    
+    if number == 1 {
+        print("Stop")
+    } else {
+        countDown(number: number - 1)
+    }
+    
+}
+print("Countdown: ")
+countDown(number: 4)
+
+// Swift Ranges
+// Closed Range
+for number in 1...4 {
+    print(number)
+}
+// Half-Open Range
+for number in 1..<4 {
+    print(number)
+}
+// One-sided Range
+let range1 = ..<2
+let range2 = 2...
+print(range1.contains(1))
+print(range2.contains(2))
+// Access Array Elements Using Swift Range
+let bhs = ["Swift", "Java", "C"]
+print(bhs[0...2])
+
+// Swift Function Overloading
+func disValue(value: Int){
+    print("Integer \(value)")
+}
+func disValue(value: String){
+    print("String \(value)")
+}
+disValue(value: 2)
+disValue(value: "Swift")
+
+// Swift Closures
+let menyapain = {
+    print("Halo")
+}
+menyapain()
+// Clouser Parameters
+var namaMenyapa = {
+    (name: String) in print("Hey \(name)")
+}
+namaMenyapa("Abah")
+// Closeru That Returns Value
+var findSquare = {
+    (num: Int) -> Int in
+    var square = num * num
+    return square
+}
+print(findSquare(3))
+// Closure as Function parameter
+func grabLunch(search: ()->()) {
+    print("Let's go out for lunch")
+    search()
+}
+grabLunch(search: {
+    print("Alfredo's Pizza: 2 miles away")
+})
+// Trailing Closure
+func grabLuun(message: String, search: () -> ()){
+    print(message)
+    search()
+}
+grabLuun(message:"Ayo membeli makanan") {
+    print("Alfredo ")
+}
