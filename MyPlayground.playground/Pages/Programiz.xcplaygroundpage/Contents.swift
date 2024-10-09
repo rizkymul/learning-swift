@@ -549,3 +549,194 @@ func grabLuun(message: String, search: () -> ()){
 grabLuun(message:"Ayo membeli makanan") {
     print("Alfredo ")
 }
+
+// Swift Class
+class Bike {
+    var name = ""
+    var gear = 0
+}
+// Swift Objects
+var bike1 = Bike()
+bike1.gear = 7
+bike1.name = "Montain Bike"
+print("Name: \(bike1.name), Gears: \(bike1.gear)")
+// Create Multiple Object of Class
+var bike2 = Bike()
+bike2.gear = 4
+bike2.name = "Sepeda Gunung"
+print("Name: \(bike2.name), Gears: \(bike2.gear)")
+// Function Inside Swift Class
+class Room {
+    var length = 0
+    var breadth = 0
+    
+    func calculateArea(){
+        print("Area of Room", length*breadth)
+    }
+}
+var studyRoom = Room()
+studyRoom.length = 20
+studyRoom.breadth = 30
+
+studyRoom.calculateArea()
+// Swift Initializer
+class Sepeda {
+    var name: String
+    var gear: Int
+    
+    init(name:String, gear:Int){
+        self.name = name
+        self.gear = gear
+    }
+}
+
+var sepeda1 = Sepeda(name: "BMX Sepeda", gear: 9)
+print("Name: \(sepeda1.name) and Gear \(sepeda1.gear)")
+
+// Swift Class OOP Properties
+class Orang {
+    var name: String = ""
+    var age: Int = 0
+}
+var orang1 = Orang()
+orang1.name = "Jaka"
+orang1.age = 23
+
+print("Nama: \(orang1.name) Usia: \(orang1.age)")
+
+// Swift Class Computed Property
+class Calculator {
+    var num1: Int = 0
+    var num2: Int = 0
+    
+    var sum: Int {
+        num1 + num2
+    }
+}
+
+var obj = Calculator()
+obj.num1 = 10
+obj.num2 = 15
+
+print("Jumlah \(obj.sum)")
+
+// Getter and Setter for Computed Properties
+class Kalkulator{
+    var num1: Int = 0
+    var num2: Int = 0
+    
+    var sum: Int {
+        get{
+            num1 + num2
+        }
+        
+        set(modify) {
+            num1 = (modify+10)
+            num2 = (modify+20)
+        }
+
+    }
+}
+var ob = Kalkulator()
+ob.num1 = 20
+ob.num2 = 80
+
+print("Sum: \(ob.sum)")
+ob.sum = 5
+print("Baru Num1: \(ob.num1)")
+print("Baru Num2: \(ob.num2)")
+print("Sum Terbaru: \(ob.sum)")
+
+// Swift OOP Methods
+class How {
+    func greet() {
+        print("Hai Kawan")
+    }
+}
+var memanggil = How()
+memanggil.greet()
+
+// Swift OOP Statistic Methods
+class KalTer {
+    func multiply(num1: Int, num2: Int) -> Int {
+        return num1 * num2
+    }
+    
+    static func add(num1: Int, num2: Int) -> Int {
+        return num1 + num2
+    }
+}
+
+var kalter = KalTer()
+var hasil1 = kalter.multiply(num1: 5, num2: 3)
+var hasil2 = KalTer.add(num1: 2, num2: 5)
+print(hasil1)
+print(hasil2)
+
+// Swift OOP Self Property
+class Marks {
+    var physics = 0
+    
+    func checkEligibility(physics: Int){
+        // Using Self Property
+        if(self.physics < physics){
+            print("Not Eligible for Admission")
+        } else {
+            print("Eligible for admission")
+        }
+    }
+}
+var murid1 = Marks()
+murid1.physics = 87
+murid1.checkEligibility(physics: 27)
+
+// Swift OOP Mutating Methods
+struct Employee {
+    var gaji = 0
+    
+    mutating func gajiNaik(penambahan: Int){
+        gaji = gaji + penambahan
+        print(gaji)
+    }
+}
+var kerja1 = Employee()
+kerja1.gaji = 800
+kerja1.gajiNaik(penambahan: 200)
+
+// Swift Protocols
+protocol Sum {
+    func addition()
+}
+protocol Multiplication {
+    func perkalian()
+}
+
+class Kar: Sum, Multiplication {
+    var num1 = 0
+    var num2 = 0
+    
+    func addition() {
+        var hasil = num1 + num2
+        print(hasil)
+    }
+    
+    func perkalian() {
+        var kali = num1 * num2
+        print(kali)
+    }
+}
+
+var karku = Kar()
+karku.num1 = 7
+karku.num2 = 5
+
+karku.addition()
+karku.perkalian()
+
+// Swift Protocol Extensions
+extension Multiplication{
+    func taraa() {
+        print("end")
+    }
+}
+karku.taraa()
